@@ -16,9 +16,9 @@ use Strict\Date\DayInterface;
  * @internal
  */
 class DayAbstract
+    extends TimeStampContainerAbstract
     implements DayInterface
 {
-    private $time;
     private const DAY_COUNT = 86400;
 
     /**
@@ -28,7 +28,7 @@ class DayAbstract
      */
     protected function __construct(int $time)
     {
-        $this->time = $time;
+        parent::__construct($time);
     }
 
     /**
@@ -114,27 +114,6 @@ class DayAbstract
     public function getYear(): int
     {
         return (int)date('Y', $this->time);
-    }
-
-    /**
-     * Returns UNIX timestamp.
-     *
-     * Hour, minute and second of the return value must be zero.
-     *
-     * @return int
-     */
-    public function getTimeStamp(): int
-    {
-        return $this->time;
-    }
-
-    /**
-     * @param string $format
-     * @return string
-     */
-    public function format(string $format): string
-    {
-        return date($format, $this->time);
     }
 
     /**
