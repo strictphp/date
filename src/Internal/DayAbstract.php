@@ -69,54 +69,6 @@ class DayAbstract
     }
 
     /**
-     * Returns day of the week.
-     *
-     * e.g. 2018-7-28 => 6 (Sat)
-     *
-     * @return int
-     */
-    public function getWeek(): int
-    {
-        return (int)date('w', $this->time);
-    }
-
-    /**
-     * Returns day.
-     *
-     * e.g. 2018-7-28 => 28
-     *
-     * @return int
-     */
-    public function getDay(): int
-    {
-        return (int)date('j', $this->time);
-    }
-
-    /**
-     * Returns month.
-     *
-     * e.g. 2018-07-28 => 7
-     *
-     * @return int
-     */
-    public function getMonth(): int
-    {
-        return (int)date('n', $this->time);
-    }
-
-    /**
-     * Returns day.
-     *
-     * e.g. 2018-07-28 => 2018
-     *
-     * @return int
-     */
-    public function getYear(): int
-    {
-        return (int)date('Y', $this->time);
-    }
-
-    /**
      * Compare two days.
      *
      * -1 if $this < $comparison

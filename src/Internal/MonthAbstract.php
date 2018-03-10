@@ -130,26 +130,6 @@ class MonthAbstract
     }
 
     /**
-     * Returns month.
-     *
-     * @return int
-     */
-    public function getMonth(): int
-    {
-        return (int)date('n', $this->time);
-    }
-
-    /**
-     * Returns year.
-     *
-     * @return int
-     */
-    public function getYear(): int
-    {
-        return (int)date('Y', $this->time);
-    }
-
-    /**
      * Compare two months.
      *
      * -1 if $this < $comparison

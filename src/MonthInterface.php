@@ -3,7 +3,7 @@
 namespace Strict\Date;
 
 use IteratorAggregate;
-use Strict\Date\Internal\TimeStampContainerInterface;
+use Strict\Date\Internal\TimeStampContainerInterfaceYM;
 use Strict\Date\Iterators\DayIterator;
 
 
@@ -16,7 +16,7 @@ use Strict\Date\Iterators\DayIterator;
  * @since 1.0.0
  */
 interface MonthInterface
-    extends TimeStampContainerInterface, IteratorAggregate
+    extends TimeStampContainerInterfaceYM, IteratorAggregate
 {
     /**
      * Returns DayInterface points the first day of this month.
@@ -78,20 +78,6 @@ interface MonthInterface
      * @return DayIterator
      */
     public function getIterator(): DayIterator;
-
-    /**
-     * Returns month.
-     *
-     * @return int
-     */
-    public function getMonth(): int;
-
-    /**
-     * Returns year.
-     *
-     * @return int
-     */
-    public function getYear(): int;
 
     /**
      * Compare two months.

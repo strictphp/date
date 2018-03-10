@@ -2,7 +2,7 @@
 
 namespace Strict\Date;
 
-use Strict\Date\Internal\TimeStampContainerInterface;
+use Strict\Date\Internal\TimeStampContainerInterfaceYMD;
 
 
 /**
@@ -14,16 +14,8 @@ use Strict\Date\Internal\TimeStampContainerInterface;
  * @since 1.0.0
  */
 interface DayInterface
-    extends TimeStampContainerInterface
+    extends TimeStampContainerInterfaceYMD
 {
-    public const WEEK_SUN = 0;
-    public const WEEK_MON = 1;
-    public const WEEK_TUE = 2;
-    public const WEEK_WED = 3;
-    public const WEEK_THU = 4;
-    public const WEEK_FRI = 5;
-    public const WEEK_SAT = 6;
-
     /**
      * Returns DayInterface of tomorrow.
      *
@@ -51,42 +43,6 @@ interface DayInterface
      * @return DayInterface
      */
     public function getNDaysAfterToday(int $interval): DayInterface;
-
-    /**
-     * Returns day of the week.
-     *
-     * e.g. 2018-07-28 => 6 (Sat)
-     *
-     * @return int
-     */
-    public function getWeek(): int;
-
-    /**
-     * Returns day.
-     *
-     * e.g. 2018-07-28 => 28
-     *
-     * @return int
-     */
-    public function getDay(): int;
-
-    /**
-     * Returns month.
-     *
-     * e.g. 2018-07-28 => 7
-     *
-     * @return int
-     */
-    public function getMonth(): int;
-
-    /**
-     * Returns year.
-     *
-     * e.g. 2018-07-28 => 2018
-     *
-     * @return int
-     */
-    public function getYear(): int;
 
     /**
      * Compare two days.

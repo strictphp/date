@@ -208,16 +208,6 @@ class YearAbstract
     }
 
     /**
-     * Returns year.
-     *
-     * @return int
-     */
-    public function getYear(): int
-    {
-        return (int)date('Y', $this->time);
-    }
-
-    /**
      * Compare two years.
      *
      * -1 if $this < $comparison

@@ -14,7 +14,7 @@ namespace Strict\Date\Internal;
  * @internal
  */
 abstract class TimeStampContainerAbstract
-    implements TimeStampContainerInterface
+    implements TimeStampContainerInterfaceYMD
 {
     protected $time;
 
@@ -44,5 +44,45 @@ abstract class TimeStampContainerAbstract
     public function format(string $format): string
     {
         return date($format, $this->time);
+    }
+
+    /**
+     * Returns year.
+     *
+     * @return int
+     */
+    public function getYear(): int
+    {
+        return (int)date('Y', $this->time);
+    }
+
+    /**
+     * Returns month.
+     *
+     * @return int
+     */
+    public function getMonth(): int
+    {
+        return (int)date('n', $this->time);
+    }
+
+    /**
+     * Returns day.
+     *
+     * @return int
+     */
+    public function getDay(): int
+    {
+        return (int)date('j', $this->time);
+    }
+
+    /**
+     * Returns day of the week.
+     *
+     * @return int
+     */
+    public function getWeek(): int
+    {
+        return (int)date('w', $this->time);
     }
 }
